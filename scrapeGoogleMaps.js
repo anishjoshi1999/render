@@ -31,7 +31,7 @@ async function searchGoogleMaps(value, state) {
     try {
       await page.goto(
         `https://www.google.com/maps/search/${query.split(" ").join("+")}`
-      );
+      , { timeout: 10000 });
     } catch (error) {
       console.log("error going to page");
     }
@@ -43,7 +43,7 @@ async function searchGoogleMaps(value, state) {
         await new Promise((resolve, reject) => {
           var totalHeight = 0;
           var distance = 1000;
-          var scrollDelay = 3000;
+          var scrollDelay = 10000;
 
           var timer = setInterval(async () => {
             var scrollHeightBefore = wrapper.scrollHeight;
@@ -63,7 +63,7 @@ async function searchGoogleMaps(value, state) {
                 resolve();
               }
             }
-          }, 200);
+          }, 1000);
         });
       });
     }
