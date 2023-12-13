@@ -13,8 +13,6 @@ const PORT = process.env.PORT || 3000;
 
 // Importing Routes
 
-// Connection to Database
-
 const MONGODB_URI = `${process.env.MONGODB_URI}`;
 
 mongoose.set("strictQuery", false);
